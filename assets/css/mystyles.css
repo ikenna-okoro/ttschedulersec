@@ -1,0 +1,224 @@
+@import "fonts.css";
+
+/*Pages*/
+
+/*Header Information */
+
+#frontpageimage {
+    margin:0px;
+    width:100%;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+
+header {
+    margin:0px 0px ;
+    background-color: rgba(13, 110, 253, 1);
+    border: 1px solid rgba(14, 57, 173, 0.753);
+    padding: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: auto;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  height: 104px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.maintitle {
+  font-family: "Brush Script MT", Lucida Handwriting, cursive;
+  text-shadow: 3px 3px 3px #363636;
+  padding-left: 40px;
+}
+
+.col-md-6{
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.text-content{
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom:  30px;
+  text-align:justify;
+}
+
+
+.panel-body{
+  padding-right: 0px;
+  margin-top: 3px;
+  margin-bottom:  30px;
+  background-color: rgba(25, 82, 240, 0.363);
+  border: 1px solid rgba(8, 2, 41, 0.575);
+  border-radius: 0px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+
+}
+
+
+.panel-heading{
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align:center;
+  background-color: rgba(13, 110, 253, 1);
+  border: 1px solid rgba(8, 2, 41, 0.575);
+  border-radius: 0px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+h1{
+  color: rgba(3, 1, 17, 0.842);
+  padding-top:5px;
+  padding-left:7px;
+  padding-bottom:5px;
+  margin-bottom: 0;
+}
+
+h3{
+    padding-top:5px;
+    padding-bottom:5px;
+    margin-bottom: 0;
+}
+
+#welcome{
+  padding-top:10px;
+  padding-bottom:30px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size:150%;
+  color: rgb(34, 18, 18);
+  margin-bottom: 0;
+}
+
+#experimentImage{ 
+    margin: 6px 0 3px 0; 
+    width: 100%;
+}
+
+
+
+
+h6{
+    padding: 0px 30px 10px 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size:smaller;
+    color: rgb(4, 64, 68);
+}
+
+nav>ul{
+    float:left;
+    display:inline-flex;
+    list-style-type:none;
+    margin:0;
+    padding:0px 0px 0px 0px;
+    overflow:visible;
+    margin: 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight:900;
+}
+nav>ul>li{
+    float:left;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    text-align:center;
+}
+nav>ul>li a{
+    display:block;
+    color: #ffffff;
+    text-align:center;
+    text-decoration:none;
+    background: rgb(9, 56, 126);
+    margin: 0 0;
+    border: none;
+    width:max-content;
+}
+
+
+nav>ul>li a:hover{
+  background-color: rgba(255, 67, 43, 0.329);
+  text-decoration:underline;
+}
+
+.navbar {
+  overflow:hidden;
+  background-color: rgb(20, 6, 5);
+  width:auto;
+}
+
+.navbar a {
+  float:left;
+  font-size: 13px;
+  color: white;
+  text-align:center;
+  padding: 2px 10px;
+  text-decoration:none;
+}
+
+
+.navbar2 {
+    overflow:visible;
+    background-color: rgb(20, 6, 5);
+    position:relative;
+    left:320px;
+    width: fit-content;
+  }
+
+  .navbar2 a {
+    float:right;
+    font-size: 13px;
+    color: white;
+    text-align:center;
+    padding: 2px 10px;
+    text-decoration:none;
+  }
+
+
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:900;
+  text-decoration:none;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(17, 13, 78);
+  text-decoration:underline;
+}
+
+
+
+
+
