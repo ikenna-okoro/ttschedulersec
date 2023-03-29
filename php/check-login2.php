@@ -1,36 +1,28 @@
 <?php
+require_once '../config.php';
+require_once 'mydef-func.incl.php';
+require_once ("../ESAPI/src/ESAPI.php");
 
-session_start();
+$validator = ESAPI::getValidator();
+
 if (isset($_POST["submit"])) {
-
-    $Email = $_POST["email"];
-    $Passwd = $_POST["password"];
-
-    require_once '../config.php';
-    require_once 'mydef-func.incl.php';
-
-	function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-      }
+  $Email = $validator->getValidEmail('POST', 'email', 'Email', 255, false);
+  $Passwd = $validator->getValidInput('POST', 'password', 'Password', 'Password', 255, false);
   
-      $Email = test_input($_POST['email']);
-      $password = test_input($_POST['password']);
-  
-      if (empty($Email)) {
-          header("Location: ../login.php?error=Email is Required");
-      }else if (empty($password)) {
-          header("Location: ../login.php?error=Password is Required");
-      }else {
- 
+  if (empty($Email)) {
+    header("Location: ../login.php?error=Email is Required");
+    exit();
+  } else if (empty($Passwd)) {
+    header("Location: ../login.php?error=Password is Required");
+    exit();
+} else {
     loginUser($conn, $Email, $Passwd);
 }
+} else {
+header("Location: ../login.php");
+exit();
 }
-else {
-    header("location: ../login.php");
-    exit();
-}
+?>
+
 
 
