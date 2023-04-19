@@ -16,6 +16,14 @@ if (isset($_POST["submit"])) {
         header("location: ../signup.php?error=emptyinput");
         exit();
     }
+    if (invalidName($Name) !== false) {
+        header("location: ../signup.php?error=invalidname");
+        exit();
+    }
+    if (invalidUid($Email) !== false) {
+        header("location: ../signup.php?error=invaliduid");
+        exit();
+    }
 
     if (invalidEmail($Email) !== false) {
         header("location: ../signup.php?error=invalidemail");

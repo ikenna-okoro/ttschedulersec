@@ -66,7 +66,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                 <input type="hidden" name="message" value="">
             <?php } ?>
             <div class="form-group">
-                <label for="date_sched" class="control-label">Appointment</label>
+                <label for="date_sched" class="control-label">Proposed Appointment Date</label>
                 <input type="datetime-local" class="form-control" name="date_sched" value="<?php echo isset($date_sched)? date("Y-m-d\TH:i",strtotime($date_sched)) : "" ?>" required>
             </div>
             <?php if($_settings->userdata('id') > 0): ?>

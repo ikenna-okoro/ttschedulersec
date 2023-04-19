@@ -30,13 +30,13 @@ header h1{
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Our vision</a></li>
                             <li><a href="#">Our mission</a></li>
-                            <?php
-                            if (isset($_SESSION["userdata"])){
-                                echo "<li><a href='home.php'>View our Catalogue</a></li>";
-                            }
-                            ?>
                             <li class="nav-item"><a class="nav-link" href="#">Latest tips</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">FAQs</a></li>
+                            <?php
+                            if (isset($_SESSION["userdata"])){
+                                echo "<li><a href='index-main.php'>Return to Booking</a></li>";
+                            }
+                            ?>
                             <?php
                             if (isset($_SESSION["userdata"])){
                                 echo "

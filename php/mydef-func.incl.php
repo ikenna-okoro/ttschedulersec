@@ -4,8 +4,35 @@
 
 function emptyInputSignup($Name, $Email, $Passwd, $PasswdRepeat) {
 
-  $result; #state variable name for true or false condition...
+  $result; #state variable for whether true or false 
     if (empty($Name) || empty($Email) || empty($Passwd) || empty($PasswdRepeat)) {
+    $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+
+#check for invalid characters in user's name
+
+function invalidName($Name) {
+  $result; #state variable for whether true or false 
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $Name)) {
+    $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+#check for invalid characters in email
+
+function invalidUid($Email) {
+  $result; #state variable for whether true or false 
+    if (!preg_match("/^[a-zA-Z0-9.@]*$/", $Email)) {
     $result = true;
     }
     else {
@@ -18,7 +45,7 @@ function emptyInputSignup($Name, $Email, $Passwd, $PasswdRepeat) {
 #check if invalid email address
 
   function invalidEmail($Email) {
-    $result; #state variable name for true or false condition...
+    $result; #state variable for whether true or false 
       if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
       }
@@ -31,7 +58,7 @@ function emptyInputSignup($Name, $Email, $Passwd, $PasswdRepeat) {
   #Check for matching password
 
   function PasswdMatch($Passwd, $PasswdRepeat) {
-    $result; #state variable name for true or false condition...
+    $result; #state variable for whether true or false 
       if ($Passwd !== $PasswdRepeat) {
         $result = true;
       }
@@ -98,7 +125,7 @@ function emptyInputSignup($Name, $Email, $Passwd, $PasswdRepeat) {
 #Empty input functions for login
 
 function emptyInputLogin($Email, $Passwd) {
-  $result; #state variable name for true or false condition...
+  $result; #state variable for whether true or false 
     if (empty($Email) || empty($Passwd)) {
     $result = true;
     }
@@ -125,12 +152,22 @@ function loginUser($conn, $Email, $Passwd) {
   }
   else if ($checkPwd === true) {
     session_start();
+    $cookie_value = sha1(mt_rand() . time() . "Impossible");
+    setcookie("SchSession", $cookie_value, time()+1800, "/vulnerabilities/weak_id/", $_SERVER['HTTP_HOST'], true, true);
+    $_SESSION["session_id"] = $cookie_value;
     $_SESSION["userid"] = $uidExists["id"];
     $_SESSION["userdata"] = $uidExists["name"];
     header("location: ../index-main.php?successful");
     exit(); 
+    if (isset($_SESSION['expire_time']) && time() > $_SESSION['expire_time']) {
+      // Destroy the session and unset all session variables
+      session_unset();
+      session_destroy();
+      header("Location: index.php");
+  }
   }
 
 
 
 }
+

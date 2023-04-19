@@ -15,7 +15,7 @@
     <div class="card-body">
       <p class="login-box-msg">Login as an Administrator</p>
 
-      <form id="login-frm" action="" method="post">
+      <form id="login-frm" action="" method="post" autocomplete = "off">
         <div class="input-group mb-3">
           <input type="text" class="form-control" autofocus name="username" placeholder="Username">
           <div class="input-group-append">

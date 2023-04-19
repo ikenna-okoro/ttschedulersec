@@ -13,8 +13,7 @@
                     <div class="panel">
                             <img src="uploads/frontmain.jpg" alt="tutor-Image" id="frontpageimage">
                     </div>
-                    Image by <a href="https://www.freepik.com/free-photo/people-collaborating-with-interest_1268762.htm#page=3&query=black%20professor%20and%20students&position=35&from_view=search&track=ais">Freepik</a> 
-
+                    Image by <a href="https://www.freepik.com/free-photo/people-collaborating-with-interest_1268762.htm#page=3&query=black%20professor%20and%20students&position=35&from_view=search&track=ais">Freepik</a>  
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">Who we are...</h3>

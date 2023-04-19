@@ -24,7 +24,7 @@ $max = 0;
 <script>
     $(function(){
         $('#schedule_appointment').click(function(){
-			uni_modal("Appointment Schedule","admin/appointments/manage_appointment.php",'mid-large')
+			uni_modal("Appointment Booking","admin/appointments/manage_appointment.php",'mid-large')
 		})
     })
 </script>

@@ -30,11 +30,15 @@ require_once("inc/header.php");
     <div class="card-body">
       <p class="login-box-msg">Register your detail here</p>
 
-            <form class="border shadow p-3 rounded" action="php/check-signup.php" method="post">
+            <form class="border shadow p-3 rounded" action="php/check-signup.php" method="post" autocomplete="off">
             <?php
     if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
             echo "<div id='erroralert' style='text-align:center'><p style='color:skyblue'>Please fill in all fields!</p></div><br>";
+        }else if ($_GET["error"] == "invalidname") {
+          echo "<div id='erroralert' style='text-align:center'><p style='color:skyblue'>Exceptional error!</p></div><br>";
+        }else if ($_GET["error"] == "invaliduid") {
+            echo "<div id='erroralert' style='text-align:center'><p style='color:skyblue'>Exceptional error!</p></div><br>";
         } else if ($_GET["error"] == "invalidemail") {
             echo "<div id='erroralert' style='text-align:center><p style='color:skyblue'>Enter a valid email address!</p></div>";
         } else if ($_GET["error"] == "passwordsdonotmatch") {

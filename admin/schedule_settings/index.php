@@ -11,7 +11,7 @@ $meta = array_column($qry->fetch_all(MYSQLI_ASSOC),'meta_value','meta_field');
 <div class="col-lg-12">
 	<div class="card card-outline card-primary">
 		<div class="card-header">
-			<h5 class="card-title">Clinic Schedule Settings</h5>
+			<h5 class="card-title">Tutor Schedule Settings</h5>
 		</div>
 		<div class="card-body">
 			<form action="" id="schedule_settings">
