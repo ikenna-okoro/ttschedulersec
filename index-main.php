@@ -1,6 +1,7 @@
 <?php require_once('config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php require_once('page-header.php') ?>
 <?php require_once('inc/header.php') ?>
 
 <body>
@@ -9,7 +10,11 @@
 	alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
 </script>
 <?php endif;?>
-<?php require_once('inc/topBarNav.php') ?>
+<?php 
+    if (isset($_SESSION['userdata'])) {
+        echo "<div class='d-inline-block align-center' style='text-align:justify;  padding-left: 430px; padding-top: 20px; padding-bottom: 20px; font-size: 20px;'><p> We welcome you  <b>". $_SESSION['userdata'] ."</b>  to our Tutor booking web application!</p></div>";
+    }
+?>
 
 <?php $page = isset($_GET['p']) ? $_GET['p'] : 'home';  ?>
 <?php 

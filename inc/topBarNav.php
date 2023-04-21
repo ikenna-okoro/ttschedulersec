@@ -16,20 +16,6 @@
                     echo "<div class='d-inline-block align-center' style='padding-left: 75px; padding-right: 75px; margin-right: 10px; font-size: 20px;'><p> We welcome you  <b>". $_SESSION['userdata'] ."</b>  to our Tutor booking web application!</p></div>";
                     }
                 ?>
-
-                <?php
-                  if (isset($_SESSION['userdata'])) {
-                  echo "<div class='card' style='width: 3.3rem; height: 2.8rem; margin-right: 0px;'>
-			                <img src='uploads/user-profile-picture.jpg' class='card-img-top' alt='admin image'>
-                    </div>
-			              <div class='card-body text-left' style='margin-left: 0px;'>
-			                <h5 class='card-title' style='font-size: 12px; margin-left: 0px; padding-left: 0px;'>".$_SESSION['userdata']."</h5>
-                    </div>
-                    <div class='card-body text-right'> 
-			                <a href='logout.php' class='btn btn-dark' style='font-size: 12px;'>Logout</a>
-			              </div>";
-                  }
-                ?>
             </div>
         </nav>
 <script>

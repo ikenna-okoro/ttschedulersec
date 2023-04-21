@@ -7,7 +7,7 @@ include_once 'page-header.php';
                 <div class="col-lg-6 ">
                     <div class="appoinment-content">
                         <img src="uploads/booking_call.jpg" alt="" class="img-fluid" id="frontpageimage"/>
-                        Image by <a href="https://www.freepik.com/free-photo/schedule-time-management-planner-concept_16459048.htm#query=call%20booking&position=35&from_view=search&track=ais">rawpixel</a>
+                        <a href="https://www.freepik.com/free-photo/schedule-time-management-planner-concept_16459048.htm#query=call%20booking&position=35&from_view=search&track=ais" style='font-size:xx-small';>Image by rawpixel</a>
                         <div class="emergency">
                             <h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>+44 7359 337375</h2><br>
                             <h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>tutorteams@ttappmail.co.ac.uk</h2>
