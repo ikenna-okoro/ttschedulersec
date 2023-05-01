@@ -92,30 +92,42 @@ function invalidUid($Email) {
     mysqli_stmt_close($stmt);
   }
 
-  function createUser($conn,$Name, $Email, $Passwd) {
-    $sql = "INSERT INTO auth_users (name, email, password) VALUES (?, ?, ?);";
+  function createUser($conn, $Name, $Email, $Passwd) {
+    // Check if the user already exists in the database
+    $sql = "SELECT * FROM auth_users WHERE name = ? AND email = ?";
     $stmt = mysqli_stmt_init($conn);
-
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../signup.php?error=failedstmt");
         exit();
     }
-    $sql = "SELECT * FROM auth_users WHERE name = '$Name' AND email='$Email'";
-    $result = mysqli_query($conn, $sql);
-
+    mysqli_stmt_bind_param($stmt, "ss", $Name, $Email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     if (mysqli_num_rows($result) > 0) {
         header("location: ../index.php?success");
         exit();
-      } else {
-        echo "You've got an error!!!";
-      }
-    
-    
-#password hashing
+    }
 
-    $hashedPasswd = password_hash($Passwd, PASSWORD_DEFAULT);
+    // Set the encryption key
+    $encryption_key = '63d4f7bfbcfcad8614655321d907689176d7c5ae0356075ccd459ea956a5c676';
 
-    mysqli_stmt_bind_param($stmt, "sss", $Name, $Email, $hashedPasswd);
+    // Encrypt the user's name and email
+    $encrypted_name = bin2hex(openssl_encrypt($Name, "aes-256-cbc", hex2bin($encryption_key), OPENSSL_RAW_DATA));
+    $encrypted_email = bin2hex(openssl_encrypt($Email, "aes-256-cbc", hex2bin($encryption_key), OPENSSL_RAW_DATA));
+
+    // Hash the user's password
+    $salt = bin2hex(random_bytes(16));
+    $pepper = "mySecretPepper"; // add a secret pepper
+    $hashedPasswd = password_hash($salt.$Passwd.$pepper, PASSWORD_ARGON2ID);
+
+    // Insert the user's data into the database
+    $sql = "INSERT INTO auth_users (name, email, password) VALUES (?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=failedstmt");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sss", $encrypted_name, $encrypted_email, $hashedPasswd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../successful-signup.php?error=none");

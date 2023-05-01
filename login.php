@@ -24,8 +24,8 @@ require_once("inc/header.php");
       	      method="post" autocomplete="off">
         <?php
         if (isset($_GET["error"])) {
-        if ($_GET["error"] == "exceptionalerror!") {
-        echo "<div class='alert alert-primary' role='alert'><p>Exceptional Error!</p></div>";
+        if ($_GET["error"] == "exceptional error!") {
+        echo "<div class='alert alert-primary' role='alert'><p>An unexpected error occurred!</p></div>";
         } else if ($_GET["error"] == "emptylogininput") {
         echo "<div class='alert alert-primary' role='alert'><p style='color:darkred'>Please fill in all fields!</p></div>";
         } else if ($_GET["error"] == "Loginincorrect!") {

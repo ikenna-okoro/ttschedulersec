@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
         header("location: ../user-login.php?error=emptylogininput");
         exit();
     }else if (invalidUid($Email) !== false) {
-        header("location: ../login.php?error=exceptionalerror!");
+        header("location: ../login.php?error=exceptional error!");
         exit();
     } else {
         loginUser($conn, $Email, $Passwd);
